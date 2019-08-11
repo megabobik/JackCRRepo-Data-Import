@@ -7,4 +7,5 @@ Features:
 
 
 Remark:
-# Repository must be closed (close()/shutdown() methods) after use. 
+
+Repository must be closed (close()/shutdown() methods) after use. 
