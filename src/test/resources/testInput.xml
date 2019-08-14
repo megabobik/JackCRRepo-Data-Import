@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<data>
+    <workspace name="chrizantema-content">
+        <node name="blogs" type="jcr:content">
+            <node name="2019" type="cztm:year-object">
+                <node name="Blog1" type="cztm:content-object">
+                    <node name="tags" type="jcr:contentNode">
+                        <node name="ecb2" type="jcr:contentNode">
+                            <node name="tags" value="ecb2-3ba" type="String"/>
+                        </node>
+                        <node name="e687" type="jcr:contentNode">
+                            <node name="tags" value="e687-e5a" type="String"/>
+                        </node>
+                    </node>
+                    <node name="category" value="c673-a68" type="String"/>
+                    <node name="group" value="d45a-y23" type="String"/>
+                    <node name="description" value="ololo" type="String"/>
+                </node>
+                <node name="Blog2" type="cztm:content-object">
+                    <node name="tags" type="jcr:contentNode">
+                        <node name="ecb2" type="jcr:contentNode">
+                            <node name="tags" value="ecb2-3ba" type="String"/>
+                        </node>
+                    </node>
+                    <node name="category" value="c633-a60" type="String"/>
+                    <node name="group" value="d25a-y23" type="String"/>
+                    <node name="description" value="rofl" type="String"/>
+                </node>
+            </node>
+        </node>
+    </workspace>
+    <workspace name="groups">
+        <node name="group1" type="cztm:group">
+           <node name="name" value="cms of world" type="String" />
+           <node name="jcr:uuid" value="d45a-y23" type="String" />
+        </node>
+    </workspace>
+    <workspace name="categories">
+        <node name="category1" type="cztm:category">
+            <node name="name" value="categoryTest" type="String" />
+            <node name="jcr:uuid" value="c673-a68" type="String" />
+        </node>
+    </workspace>
+    <workspace name="tags">
+        <node name="tag1" type="cztm:tag">
+            <node name="name" value="fast" type="String" />
+            <node name="jcr:uuid" value="ecb2-3ba" type="String" />
+        </node>
+        <node name="tag2" type="cztm:tag">
+            <node name="name" value="furious" type="String" />
+            <node name="jcr:uuid" value="e687-e5a" type="String" />
+        </node>
+    </workspace>
+</data>
