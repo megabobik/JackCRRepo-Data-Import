@@ -1,9 +1,9 @@
-package org.github.kaninhop;
+package org.github.kaninhop.jcr;
 
 import nl.openweb.jcr.InMemoryJcrRepository;
+import org.github.kaninhop.parser.AbstractParser;
+import org.github.kaninhop.parser.xml.simple.SimpleXmlParser;
 import org.junit.*;
-import org.github.kaninhop.parser.DefaultXmlParser;
-import org.github.kaninhop.parser.IParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,12 +17,12 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 
 import static javax.jcr.query.Query.JCR_SQL2;
+import static org.github.kaninhop.Constants.ADMIN_CREDENTIALS;
 import static org.junit.Assert.assertEquals;
-import static org.github.kaninhop.JCRRepoDataImport.ADMIN_CREDENTIALS;
 
-public class XmlFileJcrTest {
+public class JCRRepoDataImportTest {
 
-    private static Logger logger = LoggerFactory.getLogger(XmlFileJcrTest.class);
+    private static Logger logger = LoggerFactory.getLogger(JCRRepoDataImportTest.class);
 
     private final String CONTENT_TYPE = "jcr:content";
     private final String CONTENTNODE_TYPE = "jcr:contentNode";
@@ -30,8 +30,8 @@ public class XmlFileJcrTest {
     private final String CONTENT_WORKSPACE = "chrizantema-content";
     private final String BLOG_NODE_NAME = "/blogs";
     private final String BLOG_TITLE_TYPE = "cztm:content-object";
-    private final String BLOG_DESCRIPTION_PROPERRTY_NAME = "description";
-    private final String BLOG_DESCRIPTION_PROPERTY_VALUE = "ololo";
+    private final String BLOG_DESCRIPTION_PROPERTY_NAME = "description";
+    private final String BLOG_DESCRIPTION_PROPERTY_VALUE = "microblog";
 
     private final String CATEGORY_TO_FIND = "c673-a68";
     private final String TAG_TO_FIND = "e687-e5a";
@@ -40,9 +40,9 @@ public class XmlFileJcrTest {
 
     @BeforeClass
     public static void beforeClass() throws RepositoryException, IOException, URISyntaxException {
-        JCRRepoDataImport asd = new JCRRepoDataImport();
-        IParser parser = new DefaultXmlParser("/testInput.xml");
-        repository = asd.createRepositoryFromModel(parser.getModel());
+        JCRRepoDataImport dataImport = new JCRRepoDataImport();
+        AbstractParser parser = new SimpleXmlParser("/simple/test-content.xml");
+        repository = dataImport.createRepositoryFromModel(parser.getModel());
     }
 
     @Before
@@ -64,11 +64,11 @@ public class XmlFileJcrTest {
 
         RowIterator rowIterator = queryResult.getRows();
 //        while(rowIterator.hasNext()) {
-//            Node adr = rowIterator.nextRow().getNode("p");
+//            SimpleXmlNodeModel adr = rowIterator.nextRow().getNode("p");
 //            logger.warn(adr.getProperty("description").getString());
 //        }
         assertEquals(1, rowIterator.getSize());
-        assertEquals(BLOG_DESCRIPTION_PROPERTY_VALUE, rowIterator.nextRow().getNode("p").getProperty(BLOG_DESCRIPTION_PROPERRTY_NAME).getString());
+        assertEquals(BLOG_DESCRIPTION_PROPERTY_VALUE, rowIterator.nextRow().getNode("p").getProperty(BLOG_DESCRIPTION_PROPERTY_NAME).getString());
     }
 
     @After
