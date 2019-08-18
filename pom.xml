@@ -121,6 +121,13 @@
 			<version>2.0</version>
 		</dependency>
 
+		<!-- YAML -->
+		<dependency>
+			<groupId>org.yaml</groupId>
+			<artifactId>snakeyaml</artifactId>
+			<version>1.21</version>
+		</dependency>
+
 		<!-- In Memory JCR -->
 		<dependency>
 			<groupId>nl.openweb.jcr</groupId>
