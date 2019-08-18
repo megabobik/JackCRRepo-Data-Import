@@ -14,7 +14,7 @@
                     </node>
                     <node name="category" value="c673-a68" type="String"/>
                     <node name="group" value="d45a-y23" type="String"/>
-                    <node name="description" value="ololo" type="String"/>
+                    <node name="description" value="microblog" type="String"/>
                 </node>
                 <node name="Blog2" type="cztm:content-object">
                     <node name="tags" type="jcr:contentNode">
@@ -31,7 +31,7 @@
     </workspace>
     <workspace name="groups">
         <node name="group1" type="cztm:group">
-           <node name="name" value="cms of world" type="String" />
+           <node name="name" value="groupTest" type="String" />
            <node name="jcr:uuid" value="d45a-y23" type="String" />
         </node>
     </workspace>
@@ -50,5 +50,8 @@
             <node name="name" value="furious" type="String" />
             <node name="jcr:uuid" value="e687-e5a" type="String" />
         </node>
+    </workspace>
+    <workspace name="themes">
+        <node name="theme1" value="themeTest" type="String"/>
     </workspace>
 </data>

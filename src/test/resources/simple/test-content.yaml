@@ -1,0 +1,54 @@
+chrizantema-content:
+  type: 'workspace'
+  blogs:
+    type: 'jcr:content'
+    '2019':
+      type: 'cztm:year-object'
+      Blog1:
+        category: 'c673-a68'
+        group: 'd45a-y23'
+        description: 'microblog'
+        type: 'cztm:content-object'
+        'tags':
+          type: 'jcr:contentNode'
+          ecb2:
+            type: 'jcr:contentNode'
+            tags: 'ecb2-3ba'
+          e687:
+            type: 'jcr:contentNode'
+            tags: 'e687-e5a'
+      'Blog2':
+        'category': 'c633-a60'
+        'group': 'd25a-y23'
+        'description': 'rofl'
+        type: 'cztm:content-object'
+        'tags':
+          type: 'jcr:contentNode'
+          'ecb2':
+            type: 'jcr:contentNode'
+            'tags': 'ecb2-3ba'
+groups:
+  type: 'workspace'
+  'group1':
+    type: 'cztm:group'
+    'name': 'cms of world'
+    jcr:uuid: 'd45a-y23'
+categories:
+  type: 'workspace'
+  'category1':
+    type: 'cztm:category'
+    'name': 'categoryTest'
+    jcr:uuid: 'c673-a68'
+tags:
+  type: 'workspace'
+  'tag1':
+    type: 'cztm:tag'
+    'name': 'fast'
+    jcr:uuid: 'ecb2-3ba'
+  'tag2':
+    type: 'cztm:tag'
+    'name': 'furious'
+    jcr:uuid: 'e687-e5a'
+themes:
+  type: 'workspace'
+  'theme1': 'themeTest'
