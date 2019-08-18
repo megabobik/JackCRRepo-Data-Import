@@ -1,6 +1,5 @@
-package org.github.kaninhop;
+package org.github.kaninhop.parser.xml.simple;
 
-import com.google.common.base.Strings;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -8,21 +7,20 @@ import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @XmlRootElement(name = "data")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class DataModel {
+class SimpleXmlModel {
 
     @Getter
     @XmlElement(name = "workspace")
-    private List<Workspace> workspaces = new ArrayList<>();
+    private List<SimpleXmlWorkspaceModel> workspaces = new ArrayList<>();
 
     @Getter
     @NoArgsConstructor
     @XmlAccessorType(XmlAccessType.FIELD)
-    public static class Workspace {
+    public static class SimpleXmlWorkspaceModel {
 
-        public Workspace(String name) {
+        public SimpleXmlWorkspaceModel(String name) {
             this.workspaceName = name;
         }
 
@@ -30,18 +28,11 @@ public class DataModel {
         private String workspaceName;
 
         @XmlElement(name = "node")
-        private List<Node> nodes = new ArrayList<>();
+        private List<SimpleXmlNodeModel> nodes = new ArrayList<>();
 
         @Getter
-        @NoArgsConstructor
         @XmlAccessorType(XmlAccessType.FIELD)
-        public static class Node {
-
-            public Node(String name, String value, String type) {
-                this.name = name;
-                this.value = value;
-                this.type = type;
-            }
+        public static class SimpleXmlNodeModel {
 
             @XmlAttribute(name = "name")
             private String name;
@@ -53,11 +44,7 @@ public class DataModel {
             private String type;
 
             @XmlElement(name = "node")
-            private List<Node> nodes = new ArrayList<>();
-
-            public boolean isValueNode() {
-                return !Strings.isNullOrEmpty(value);
-            }
+            private List<SimpleXmlNodeModel> nodes = new ArrayList<>();
         }
     }
 }

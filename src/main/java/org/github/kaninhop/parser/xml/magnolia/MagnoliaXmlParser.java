@@ -1,11 +1,10 @@
-package org.github.kaninhop.parser;
+package org.github.kaninhop.parser.xml.magnolia;
 
 import com.google.common.io.Files;
-import org.github.kaninhop.parser.magnolia.MagnoliaXmlConverter;
-import org.github.kaninhop.parser.magnolia.MagnoliaXmlNode;
+import org.github.kaninhop.parser.AbstractParser;
+import org.github.kaninhop.parser.IConverter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.github.kaninhop.DataModel;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -17,7 +16,7 @@ import java.nio.charset.Charset;
 /**
  * Parser for Magnolia CMS export XML
  */
-public class MagnoliaXmlParser implements IParser {
+public class MagnoliaXmlParser extends AbstractParser<MagnoliaXmlModel> {
 
     private static Logger logger = LoggerFactory.getLogger(MagnoliaXmlParser.class);
 
@@ -28,9 +27,8 @@ public class MagnoliaXmlParser implements IParser {
     }
 
     @Override
-    public DataModel getModel() {
+    protected MagnoliaXmlModel parseData() {
         final File xmlFile = new File(getClass().getResource(fileName).getFile());
-        final MagnoliaXmlConverter converter = new MagnoliaXmlConverter();
 
         String dataXml = "";
         try {
@@ -42,17 +40,18 @@ public class MagnoliaXmlParser implements IParser {
         //removing all sv: namespace from elements and attributes
         dataXml = dataXml.replace("sv:", "");
 
-        DataModel dataModel = null;
-        JAXBContext jaxbContext;
+        MagnoliaXmlModel magnoliaXmlModel = null;
         try {
-            jaxbContext = JAXBContext.newInstance(MagnoliaXmlNode.class);
-            MagnoliaXmlNode magnoliaNodes = (MagnoliaXmlNode) jaxbContext.createUnmarshaller().unmarshal(new StringReader(dataXml));
-            dataModel = converter.getDataModel(magnoliaNodes);
-            dataXml.toString();
+            JAXBContext jaxbContext = JAXBContext.newInstance(MagnoliaXmlModel.class);
+            magnoliaXmlModel = (MagnoliaXmlModel) jaxbContext.createUnmarshaller().unmarshal(new StringReader(dataXml));
         } catch (JAXBException e) {
-            logger.error("", e);
+            logger.error("Can't parse data", e);
         }
+        return magnoliaXmlModel;
+    }
 
-        return dataModel;
+    @Override
+    protected IConverter getConverter() {
+        return new MagnoliaXmlConverter();
     }
 }

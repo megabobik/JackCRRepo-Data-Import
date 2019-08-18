@@ -1,16 +1,19 @@
-package org.github.kaninhop;
+package org.github.kaninhop.jcr;
 
 import nl.openweb.jcr.InMemoryJcrRepository;
-import org.github.kaninhop.namespace.NodeTypeRegister;
+import org.github.kaninhop.jcr.registry.NodeTypeRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.jcr.*;
+import javax.jcr.Node;
+import javax.jcr.RepositoryException;
+import javax.jcr.Session;
+import javax.jcr.Workspace;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
 
-import static java.util.Arrays.asList;
+import static org.github.kaninhop.Constants.ADMIN_CREDENTIALS;
 
 /**
  * Create Jackrabbit repository with all data, must closed after use
@@ -18,10 +21,6 @@ import static java.util.Arrays.asList;
 public class JCRRepoDataImport {
 
     private static Logger logger = LoggerFactory.getLogger(JCRRepoDataImport.class);
-
-    private List<String> JACKRABBIT_REGISTERED_NAMESPACES = asList("jcr","nt", "mix","xml");
-
-    public static final SimpleCredentials ADMIN_CREDENTIALS = new SimpleCredentials("admin", "admin".toCharArray());
 
     public InMemoryJcrRepository createRepositoryFromModel(DataModel dataModel) throws RepositoryException, IOException, URISyntaxException {
         return processModel(dataModel);
@@ -38,6 +37,8 @@ public class JCRRepoDataImport {
             addNodes(session, session.getRootNode(), modelWorkspace.getNodes());
             session.save();
         }
+
+        logger.debug("Repository created");
         return repository;
     }
 
@@ -45,19 +46,18 @@ public class JCRRepoDataImport {
         if(nodeList == null) {
             return;
         }
-        Workspace workspace = session.getWorkspace();
 
         for(DataModel.Workspace.Node x : nodeList) {
             final String name = x.getName();
             final String value = x.getValue();
             final String type = x.getType();
 
-            if(x.isValueNode()) {
+            if(x.isProperty()) {
                 node.setProperty(name, value);
                 continue;
             }
 
-            NodeTypeRegister.createNodeType(session, type);
+            NodeTypeRegistry.registerNodeType(session, type);
 
             addNodes(session, node.addNode(name, type), x.getNodes());
         }

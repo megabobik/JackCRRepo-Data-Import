@@ -1,6 +1,5 @@
-package org.github.kaninhop.parser.magnolia;
+package org.github.kaninhop.parser.xml.magnolia;
 
-import com.google.common.base.Strings;
 import lombok.Getter;
 
 import javax.xml.bind.annotation.*;
@@ -9,7 +8,19 @@ import java.util.List;
 
 @XmlRootElement(name = "node")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class MagnoliaXmlNode {
+class MagnoliaXmlModel {
+
+    public MagnoliaXmlModel() {
+
+    }
+
+    MagnoliaXmlModel(String name, List<MagnoliaXmlModel> nodes, List<MagnoliaXmlProperty> properties) {
+        this.name = name;
+        this.nodes.clear();
+        this.nodes.addAll(nodes);
+        this.properties.clear();
+        this.properties.addAll(properties);
+    }
 
     @Getter
     @XmlAttribute(name = "name")
@@ -17,14 +28,16 @@ public class MagnoliaXmlNode {
 
     @Getter
     @XmlElement(name = "node")
-    private List<MagnoliaXmlNode> nodes = new ArrayList<>();
+    private List<MagnoliaXmlModel> nodes = new ArrayList<>();
 
     @Getter
     @XmlElement(name = "property")
-    private List<Property> properties = new ArrayList<>();
+    private List<MagnoliaXmlProperty> properties = new ArrayList<>();
+
+
 
     @XmlAccessorType(XmlAccessType.FIELD)
-    public static class Property {
+    public static class MagnoliaXmlProperty {
 
         @Getter
         @XmlAttribute(name = "name")
@@ -37,10 +50,6 @@ public class MagnoliaXmlNode {
         @Getter
         @XmlElement(name = "value")
         private String value;
-
-        public boolean isValueNode() {
-            return !Strings.isNullOrEmpty(value);
-        }
 
         public boolean isNodeProperty() {
             return name.equals("jcr:primaryType") && type.equals("Name");
