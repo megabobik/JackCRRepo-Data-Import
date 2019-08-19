@@ -1,4 +1,4 @@
-package org.github.kaninhop.parser.yaml.simple;
+package org.github.kaninhop.parser.simple.yaml;
 
 import org.github.kaninhop.parser.AbstractParser;
 import org.github.kaninhop.parser.IConverter;

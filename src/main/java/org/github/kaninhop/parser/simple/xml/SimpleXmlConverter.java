@@ -1,4 +1,4 @@
-package org.github.kaninhop.parser.xml.simple;
+package org.github.kaninhop.parser.simple.xml;
 
 import org.github.kaninhop.jcr.DataModel;
 import org.github.kaninhop.parser.IConverter;

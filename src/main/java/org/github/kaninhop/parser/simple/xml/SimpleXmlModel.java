@@ -1,4 +1,4 @@
-package org.github.kaninhop.parser.xml.simple;
+package org.github.kaninhop.parser.simple.xml;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

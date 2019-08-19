@@ -1,4 +1,4 @@
-package org.github.kaninhop.parser.xml.magnolia;
+package org.github.kaninhop.parser.magnolia.xml;
 
 import org.github.kaninhop.Constants;
 import org.github.kaninhop.jcr.DataModel;

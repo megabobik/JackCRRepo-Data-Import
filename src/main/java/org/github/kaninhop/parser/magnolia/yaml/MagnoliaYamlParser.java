@@ -1,4 +1,4 @@
-package org.github.kaninhop.parser.yaml.magnolia;
+package org.github.kaninhop.parser.magnolia.yaml;
 
 import com.google.common.io.Files;
 import org.github.kaninhop.parser.AbstractParser;

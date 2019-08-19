@@ -1,11 +1,11 @@
-package org.github.kaninhop.parser.yaml.magnolia;
+package org.github.kaninhop.parser.simple.yaml;
 
 import org.github.kaninhop.jcr.DataModel;
 import org.github.kaninhop.parser.IConverter;
 
 import java.util.Map;
 
-class MagnoliaYamlConverter implements IConverter<MagnoliaYamlModel> {
+class SimpleYamlConverter implements IConverter<SimpleYamlModel> {
 
     private final String WORKSPACE = "workspace";
     private final String TYPE = "type";
@@ -13,10 +13,10 @@ class MagnoliaYamlConverter implements IConverter<MagnoliaYamlModel> {
     private final String STRING_TYPE = "String";
 
     @Override
-    public DataModel getDataModel(MagnoliaYamlModel model) {
+    public DataModel getDataModel(SimpleYamlModel model) {
         DataModel dataModel = new DataModel();
 
-        Map<String, Object> map = model.getYamlMap();
+        Map<String, Object>  map = model.getYamlMap();
 
         map.forEach((key, value) -> {
             Map<String, Object> aMap = getMap(value);

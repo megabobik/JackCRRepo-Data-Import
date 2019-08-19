@@ -1,4 +1,4 @@
-package org.github.kaninhop.parser.yaml.simple;
+package org.github.kaninhop.parser.magnolia.yaml;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -6,7 +6,7 @@ import lombok.Getter;
 import java.util.Map;
 
 @AllArgsConstructor
-class SimpleYamlModel {
+class MagnoliaYamlModel {
 
     @Getter
     private Map<String, Object> yamlMap;
