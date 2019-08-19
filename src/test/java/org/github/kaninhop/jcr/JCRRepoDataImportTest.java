@@ -2,10 +2,8 @@ package org.github.kaninhop.jcr;
 
 import nl.openweb.jcr.InMemoryJcrRepository;
 import org.github.kaninhop.parser.AbstractParser;
-import org.github.kaninhop.parser.xml.simple.SimpleXmlParser;
+import org.github.kaninhop.parser.simple.xml.SimpleXmlParser;
 import org.junit.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
@@ -21,8 +19,6 @@ import static org.github.kaninhop.Constants.ADMIN_CREDENTIALS;
 import static org.junit.Assert.assertEquals;
 
 public class JCRRepoDataImportTest {
-
-    private static Logger logger = LoggerFactory.getLogger(JCRRepoDataImportTest.class);
 
     private final String CONTENT_TYPE = "jcr:content";
     private final String CONTENTNODE_TYPE = "jcr:contentNode";
