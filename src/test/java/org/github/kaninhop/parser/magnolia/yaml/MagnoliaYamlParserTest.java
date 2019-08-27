@@ -8,10 +8,18 @@ import org.junit.Test;
 public class MagnoliaYamlParserTest extends MagnoliaParserTestBase {
 
     @Test
-    public void test_parser(){
+    public void test_yaml_parser(){
         AbstractParser parser = new MagnoliaYamlParser("/magnolia/fuzzylop-mgnl-content.yaml");
         DataModel dataModel = parser.getModel();
 
-        test_all(dataModel);
+        test_root(dataModel);
+    }
+
+    @Test
+    public void test_yaml_part_parser() {
+        AbstractParser parser = new MagnoliaYamlParser("/magnolia/fuzzylop-mgnl-content.blogs.yaml");
+        DataModel dataModel = parser.getModel();
+
+        test_element(dataModel);
     }
 }

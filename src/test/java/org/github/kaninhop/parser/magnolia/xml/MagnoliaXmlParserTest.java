@@ -12,6 +12,14 @@ public class MagnoliaXmlParserTest extends MagnoliaParserTestBase{
         AbstractParser parser = new MagnoliaXmlParser("/magnolia/fuzzylop-mgnl-content.xml");
         DataModel dataModel = parser.getModel();
 
-        test_all(dataModel);
+        test_root(dataModel);
+    }
+
+    @Test
+    public void test_xml_part_parser() {
+        AbstractParser parser = new MagnoliaXmlParser("/magnolia/fuzzylop-mgnl-content.blogs.xml");
+        DataModel dataModel = parser.getModel();
+
+        test_element(dataModel);
     }
 }

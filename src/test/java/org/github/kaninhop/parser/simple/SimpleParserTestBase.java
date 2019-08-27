@@ -26,6 +26,7 @@ public abstract class SimpleParserTestBase {
     private final String YEAR_NODE_NAME = "2019";
     private final String BLOG_NAME_NODE_NAME = "Blog1";
     private final String TAGS_NODE_NAME = "tags";
+    private final String GROUP_NODE_NAME = "group1";
 
     private final String CATEGORY_PROPERTY_NAME = "category";
     private final String GROUP_PROPERTY_NAME = "group";
@@ -75,6 +76,10 @@ public abstract class SimpleParserTestBase {
         assertEquals(DESCRIPTION_PROPERTY_NAME, dataModel.getWorkspaces().get(0).getNodes().get(0).getNodes().get(0).getNodes().get(0).getNodes().get(3).getName());
         assertEquals(DESCRIPTION_PROPERTY_VALUE, dataModel.getWorkspaces().get(0).getNodes().get(0).getNodes().get(0).getNodes().get(0).getNodes().get(3).getValue());
         assertEquals(STRING_TYPE, dataModel.getWorkspaces().get(0).getNodes().get(0).getNodes().get(0).getNodes().get(0).getNodes().get(3).getType());
+
+        assertEquals(GROUP_NODE_NAME, dataModel.getWorkspaces().get(1).getNodes().get(0).getName());
+        assertEquals(null, dataModel.getWorkspaces().get(1).getNodes().get(0).getValue());
+        assertEquals(GROUP_NODE_TYPE, dataModel.getWorkspaces().get(1).getNodes().get(0).getType());
 
         assertEquals(THEME_PROPERTY_NAME, dataModel.getWorkspaces().get(4).getNodes().get(0).getName());
         assertEquals(THEME_PROPERTY_VALUE, dataModel.getWorkspaces().get(4).getNodes().get(0).getValue());
