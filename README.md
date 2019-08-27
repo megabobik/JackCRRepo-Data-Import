@@ -7,11 +7,12 @@ Features:
 
 [![Build Status](https://dev.azure.com/vagabundus/Project%20Kaninhop/_apis/build/status/Kaninhop%20Pipeline?branchName=master)](https://dev.azure.com/vagabundus/Project%20Kaninhop/_build/latest?definitionId=4&branchName=master)
 
-Remark:
 
-Repository must be closed (close()/shutdown() methods) after use. 
+### Remark:
 
-## See also
+Repository must be closed (close()/shutdown() methods) after use.
+
+#### See also
 
 - nl.openweb.jcr/in-memory-jcr
 - org.apache.jackrabbit/jackrabbit-core
