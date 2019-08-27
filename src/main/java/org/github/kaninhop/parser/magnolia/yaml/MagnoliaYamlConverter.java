@@ -1,16 +1,24 @@
 package org.github.kaninhop.parser.magnolia.yaml;
 
+import org.github.kaninhop.Constants;
 import org.github.kaninhop.jcr.DataModel;
 import org.github.kaninhop.parser.IConverter;
 
+import java.util.Date;
 import java.util.Map;
 
 class MagnoliaYamlConverter implements IConverter<MagnoliaYamlModel> {
 
-    private final String WORKSPACE = "workspace";
-    private final String TYPE = "type";
+    private final String TYPE = "jcr:primaryType";
+    private final String CONTENT_NODE = "mgnl:contentNode";
 
     private final String STRING_TYPE = "String";
+
+    private String workspaceName = Constants.DEFAULT_WORKSPACE;
+
+    public MagnoliaYamlConverter(String workspaceName) {
+        this.workspaceName = workspaceName;
+    }
 
     @Override
     public DataModel getDataModel(MagnoliaYamlModel model) {
@@ -18,16 +26,9 @@ class MagnoliaYamlConverter implements IConverter<MagnoliaYamlModel> {
 
         Map<String, Object> map = model.getYamlMap();
 
-        map.forEach((key, value) -> {
-            Map<String, Object> aMap = getMap(value);
-            String type = getType(aMap);
-
-            if(WORKSPACE.equalsIgnoreCase(type)) {
-                DataModel.Workspace workspace = new DataModel.Workspace(key);
-                addData(workspace, aMap);
-                dataModel.getWorkspaces().add(workspace);
-            }
-        });
+        DataModel.Workspace workspace = new DataModel.Workspace(workspaceName);
+        addData(workspace, map);
+        dataModel.getWorkspaces().add(workspace);
 
         return dataModel;
     }
@@ -64,6 +65,12 @@ class MagnoliaYamlConverter implements IConverter<MagnoliaYamlModel> {
     private String getValue(Object object) {
         Map<String, Object> map1 = getMap(object);
         if(map1 == null) {
+            if(object instanceof Boolean) {
+                return ((Boolean) object).toString();
+            }
+            if(object instanceof Date) {
+                return ((Date) object).toString();
+            }
             return (String) object;
         } else {
             return null;
@@ -76,7 +83,7 @@ class MagnoliaYamlConverter implements IConverter<MagnoliaYamlModel> {
             map.remove(TYPE);
             return type;
         }
-        return STRING_TYPE;
+        return CONTENT_NODE;
     }
 
     private Map<String, Object> getMap(Object value){

@@ -1,6 +1,7 @@
 package org.github.kaninhop.parser.magnolia.yaml;
 
 import com.google.common.io.Files;
+import org.github.kaninhop.Constants;
 import org.github.kaninhop.parser.AbstractParser;
 import org.github.kaninhop.parser.IConverter;
 import org.slf4j.Logger;
@@ -13,16 +14,22 @@ import java.nio.charset.Charset;
 import java.util.Map;
 
 /**
- * Unimplemented
+ * Parser for Magnolia CMS export YAML
  */
 public class MagnoliaYamlParser extends AbstractParser<MagnoliaYamlModel>{
 
     private static Logger logger = LoggerFactory.getLogger(MagnoliaYamlParser.class);
 
     private String fileName;
+    private String workspaceName = Constants.DEFAULT_WORKSPACE;
 
     public MagnoliaYamlParser(String fileName) {
         this.fileName = fileName;
+    }
+
+    public MagnoliaYamlParser(String fileName, String workspaceName) {
+        this(fileName);
+        this.workspaceName = workspaceName;
     }
 
     @Override
@@ -47,6 +54,6 @@ public class MagnoliaYamlParser extends AbstractParser<MagnoliaYamlModel>{
 
     @Override
     protected IConverter getConverter() {
-        return new MagnoliaYamlConverter();
+        return new MagnoliaYamlConverter(workspaceName);
     }
 }

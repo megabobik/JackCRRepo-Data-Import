@@ -1,34 +1,47 @@
 package org.github.kaninhop.parser.magnolia.xml;
 
-import org.github.kaninhop.Constants;
 import org.github.kaninhop.jcr.DataModel;
 import org.github.kaninhop.parser.IConverter;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 class MagnoliaXmlConverter implements IConverter<MagnoliaXmlModel> {
 
     private final String ROOT_TYPE = "rep:root";
 
+    private String workspaceName;
+
+    public MagnoliaXmlConverter(String workspaceName){
+        this.workspaceName = workspaceName;
+    }
+
     @Override
     public DataModel getDataModel(MagnoliaXmlModel model) {
         DataModel dataModel = new DataModel();
-        DataModel.Workspace workspace = new DataModel.Workspace(Constants.DEFAULT_WORKSPACE);
-        DataModel.Workspace.Node node =  convertNode(model);
+        DataModel.Workspace workspace = new DataModel.Workspace(workspaceName);
 
-        workspace.getNodes().add(node);
+        convertNode(workspace, model);
         dataModel.getWorkspaces().add(workspace);
 
         return  dataModel;
     }
 
-    private DataModel.Workspace.Node convertNode(MagnoliaXmlModel xmlModel) {
+    private void convertNode(DataModel.Workspace workspace, MagnoliaXmlModel xmlModel) {
         Optional<MagnoliaXmlModel.MagnoliaXmlProperty> property = xmlModel.getProperties().stream().filter(x -> ROOT_TYPE.equals(x.getValue())).findFirst();
+        List<MagnoliaXmlModel> modelList = new ArrayList<>();
+        modelList.add(xmlModel);
         if(property.isPresent()){
-            MagnoliaXmlModel nodeB = xmlModel.getNodes().get(0);
-            xmlModel = new MagnoliaXmlModel(nodeB.getName(), nodeB.getNodes(), nodeB.getProperties());
+            modelList.clear();
+            modelList.addAll(xmlModel.getNodes());
         }
-        return addData(xmlModel);
+
+        modelList.forEach(nodeB -> {
+            MagnoliaXmlModel magModel = new MagnoliaXmlModel(nodeB.getName(), nodeB.getNodes(), nodeB.getProperties());
+            DataModel.Workspace.Node newNode = addData(magModel);
+            workspace.getNodes().add(newNode);
+        });
     }
 
     private DataModel.Workspace.Node addData(MagnoliaXmlModel magNode) {

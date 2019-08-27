@@ -1,6 +1,7 @@
 package org.github.kaninhop.parser.magnolia.xml;
 
 import com.google.common.io.Files;
+import org.github.kaninhop.Constants;
 import org.github.kaninhop.parser.AbstractParser;
 import org.github.kaninhop.parser.IConverter;
 import org.slf4j.Logger;
@@ -21,9 +22,15 @@ public class MagnoliaXmlParser extends AbstractParser<MagnoliaXmlModel> {
     private static Logger logger = LoggerFactory.getLogger(MagnoliaXmlParser.class);
 
     private final String fileName;
+    private String workspaceName = Constants.DEFAULT_WORKSPACE;
 
     public MagnoliaXmlParser(String fileName) {
         this.fileName = fileName;
+    }
+
+    public MagnoliaXmlParser(String fileName, String workspaceName) {
+        this(fileName);
+        this.workspaceName = workspaceName;
     }
 
     @Override
@@ -52,6 +59,6 @@ public class MagnoliaXmlParser extends AbstractParser<MagnoliaXmlModel> {
 
     @Override
     protected IConverter getConverter() {
-        return new MagnoliaXmlConverter();
+        return new MagnoliaXmlConverter(workspaceName);
     }
 }
