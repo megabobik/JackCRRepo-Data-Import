@@ -7,7 +7,7 @@
             </activation>
             <properties>
                 <gpg.executable>gpg</gpg.executable>
-                <gpg.passphrase>$gpg_passphrase</gpg.passphrase>
+                <gpg.passphrase>$(gpg_passphrase)</gpg.passphrase>
             </properties>
         </profile>
     </profiles>
@@ -15,8 +15,8 @@
     <servers>
         <server>
             <id>ossrh</id>
-            <username>$jira_username</username>
-            <password>$jira_password</password>
+            <username>$(jira_username)</username>
+            <password>$(jira_password)</password>
         </server>
     </servers>
 </settings>
