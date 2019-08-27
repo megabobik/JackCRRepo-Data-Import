@@ -1,0 +1,50 @@
+'blogs':
+  jcr:primaryType: 'mgnl:content'
+  jcr:uuid: 'c472ae92-49e4-4960-8f38-f355ff485fe3'
+  mgnl:activationStatus: true
+  mgnl:created: 2018-11-06T08:48:03.545+01:00
+  mgnl:createdBy: 'hazelrabbit'
+  mgnl:lastActivated: 2018-11-06T08:48:58.411+01:00
+  mgnl:lastActivatedBy: 'hazelrabbit'
+  mgnl:lastModified: 2018-11-06T08:48:26.624+01:00
+  mgnl:lastModifiedBy: 'hazelrabbit'
+  '2019':
+    jcr:primaryType: 'mgnl:mellerud-content-year-object'
+    jcr:uuid: '87c7f036-7e3b-4347-92bc-c8f9b598b407'
+    mgnl:created: 2018-11-06T08:48:26.625+01:00
+    mgnl:createdBy: 'hazelrabbit'
+    mgnl:lastModified: 2019-08-06T13:29:46.757+02:00
+    mgnl:lastModifiedBy: 'hazelrabbit'
+    'blog1':
+      'weight': '100'
+      'category': 'a58a7040-a0fa-407e-a069-532d9b06e513'
+      'date': 2019-08-07T13:29:00.000+02:00
+      'description': 'callducks better than rabbits'
+      'group': '776c6baa-cb94-46b9-b784-aaee7a08144e'
+      'name': 'zenada'
+      jcr:primaryType: 'mgnl:mellerud-content-object'
+      jcr:uuid: '11922d7c-b5d9-466e-9781-a00fa0e4da37'
+      mgnl:created: 2019-08-06T13:29:46.758+02:00
+      mgnl:createdBy: 'hazelrabbit'
+      mgnl:lastModified: 2019-08-06T15:14:15.675+02:00
+      mgnl:lastModifiedBy: 'hazelrabbit'
+      'tags':
+        jcr:uuid: 'baf641d0-8d17-49ed-b318-8340f5807915'
+        mgnl:created: 2019-08-06T13:29:46.758+02:00
+        mgnl:createdBy: 'hazelrabbit'
+        mgnl:lastModified: 2019-08-06T13:29:46.758+02:00
+        mgnl:lastModifiedBy: 'hazelrabbit'
+        'ecb2af8b-3bda-4e2f-9': 
+          'tags': 'ecb2af8b-3bda-4e2f-9f0e-0d5574c0d4b0'
+          jcr:uuid: '0ac21621-428a-4fa1-89a1-4a4e816d5f40'
+          mgnl:created: 2019-08-06T13:29:46.758+02:00
+          mgnl:createdBy: 'hazelrabbit'
+          mgnl:lastModified: 2019-08-06T13:31:09.691+02:00
+          mgnl:lastModifiedBy: 'hazelrabbit'
+        'e68e4d5e-e5a9-4b37-a': 
+          'tags': 'e68e4d5e-e5a9-4b37-ae2d-055bf1d1a1e9'
+          jcr:uuid: '58002754-fb66-4622-916b-d561e5b5d982'
+          mgnl:created: 2019-08-06T13:29:46.758+02:00
+          mgnl:createdBy: 'hazelrabbit'
+          mgnl:lastModified: 2019-08-06T13:29:46.758+02:00
+          mgnl:lastModifiedBy: 'hazelrabbit'

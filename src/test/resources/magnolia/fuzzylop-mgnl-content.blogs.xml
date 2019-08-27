@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sv:node xmlns:sv="http://www.jcp.org/jcr/sv/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" sv:name="blogs">
+  <sv:property sv:name="jcr:primaryType" sv:type="Name">
+    <sv:value>mgnl:content</sv:value>
+  </sv:property>
+  <sv:property sv:name="jcr:uuid" sv:type="String">
+    <sv:value>c472ae92-49e4-4960-8f38-f355ff485fe3</sv:value>
+  </sv:property>
+  <sv:property sv:name="mgnl:activationStatus" sv:type="Boolean">
+    <sv:value>true</sv:value>
+  </sv:property>
+  <sv:property sv:name="mgnl:created" sv:type="Date">
+    <sv:value>2018-11-06T08:48:03.545+01:00</sv:value>
+  </sv:property>
+  <sv:property sv:name="mgnl:createdBy" sv:type="String">
+    <sv:value>hazelrabbit</sv:value>
+  </sv:property>
+  <sv:property sv:name="mgnl:lastActivated" sv:type="Date">
+    <sv:value>2018-11-06T08:48:58.411+01:00</sv:value>
+  </sv:property>
+  <sv:property sv:name="mgnl:lastActivatedBy" sv:type="String">
+    <sv:value>hazelrabbit</sv:value>
+  </sv:property>
+  <sv:property sv:name="mgnl:lastModified" sv:type="Date">
+    <sv:value>2018-11-06T08:48:26.624+01:00</sv:value>
+  </sv:property>
+  <sv:property sv:name="mgnl:lastModifiedBy" sv:type="String">
+    <sv:value>hazelrabbit</sv:value>
+  </sv:property>
+  <sv:node sv:name="2019">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:mellerud-content-year-object</sv:value>
+    </sv:property>
+    <sv:property sv:name="jcr:uuid" sv:type="String">
+      <sv:value>87c7f036-7e3b-4347-92bc-c8f9b598b407</sv:value>
+    </sv:property>
+    <sv:property sv:name="mgnl:created" sv:type="Date">
+      <sv:value>2018-11-06T08:48:26.625+01:00</sv:value>
+    </sv:property>
+    <sv:property sv:name="mgnl:createdBy" sv:type="String">
+      <sv:value>hazelrabbit</sv:value>
+    </sv:property>
+    <sv:property sv:name="mgnl:lastModified" sv:type="Date">
+      <sv:value>2019-08-06T13:29:46.757+02:00</sv:value>
+    </sv:property>
+    <sv:property sv:name="mgnl:lastModifiedBy" sv:type="String">
+      <sv:value>hazelrabbit</sv:value>
+    </sv:property>
+    <sv:node sv:name="blog1">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:mellerud-content-object</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcr:uuid" sv:type="String">
+        <sv:value>11922d7c-b5d9-466e-9781-a00fa0e4da37</sv:value>
+      </sv:property>
+      <sv:property sv:name="category" sv:type="String">
+        <sv:value>a58a7040-a0fa-407e-a069-532d9b06e513</sv:value>
+      </sv:property>
+      <sv:property sv:name="date" sv:type="Date">
+        <sv:value>2019-08-07T13:29:00.000+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="description" sv:type="String">
+        <sv:value>callducks better than rabbits</sv:value>
+      </sv:property>
+      <sv:property sv:name="group" sv:type="String">
+        <sv:value>776c6baa-cb94-46b9-b784-aaee7a08144e</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:created" sv:type="Date">
+        <sv:value>2019-08-06T13:29:46.758+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:createdBy" sv:type="String">
+        <sv:value>hazelrabbit</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified" sv:type="Date">
+        <sv:value>2019-08-06T15:14:15.675+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModifiedBy" sv:type="String">
+        <sv:value>hazelrabbit</sv:value>
+      </sv:property>
+      <sv:property sv:name="name" sv:type="String">
+        <sv:value>zenada</sv:value>
+      </sv:property>
+      <sv:property sv:name="weight" sv:type="String">
+        <sv:value>100</sv:value>
+      </sv:property>
+      <sv:node sv:name="tags">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>mgnl:contentNode</sv:value>
+        </sv:property>
+        <sv:property sv:name="jcr:uuid" sv:type="String">
+          <sv:value>baf641d0-8d17-49ed-b318-8340f5807915</sv:value>
+        </sv:property>
+        <sv:property sv:name="mgnl:created" sv:type="Date">
+          <sv:value>2019-08-06T13:29:46.758+02:00</sv:value>
+        </sv:property>
+        <sv:property sv:name="mgnl:createdBy" sv:type="String">
+          <sv:value>hazelrabbit</sv:value>
+        </sv:property>
+        <sv:property sv:name="mgnl:lastModified" sv:type="Date">
+          <sv:value>2019-08-06T13:29:46.758+02:00</sv:value>
+        </sv:property>
+        <sv:property sv:name="mgnl:lastModifiedBy" sv:type="String">
+          <sv:value>hazelrabbit</sv:value>
+        </sv:property>
+        <sv:node sv:name="ecb2af8b-3bda-4e2f-9">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>mgnl:contentNode</sv:value>
+          </sv:property>
+          <sv:property sv:name="jcr:uuid" sv:type="String">
+            <sv:value>0ac21621-428a-4fa1-89a1-4a4e816d5f40</sv:value>
+          </sv:property>
+          <sv:property sv:name="mgnl:created" sv:type="Date">
+            <sv:value>2019-08-06T13:29:46.758+02:00</sv:value>
+          </sv:property>
+          <sv:property sv:name="mgnl:createdBy" sv:type="String">
+            <sv:value>hazelrabbit</sv:value>
+          </sv:property>
+          <sv:property sv:name="mgnl:lastModified" sv:type="Date">
+            <sv:value>2019-08-06T13:31:09.691+02:00</sv:value>
+          </sv:property>
+          <sv:property sv:name="mgnl:lastModifiedBy" sv:type="String">
+            <sv:value>hazelrabbit</sv:value>
+          </sv:property>
+          <sv:property sv:name="tags" sv:type="String">
+            <sv:value>ecb2af8b-3bda-4e2f-9f0e-0d5574c0d4b0</sv:value>
+          </sv:property>
+        </sv:node>
+        <sv:node sv:name="e68e4d5e-e5a9-4b37-a">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>mgnl:contentNode</sv:value>
+          </sv:property>
+          <sv:property sv:name="jcr:uuid" sv:type="String">
+            <sv:value>58002754-fb66-4622-916b-d561e5b5d982</sv:value>
+          </sv:property>
+          <sv:property sv:name="mgnl:created" sv:type="Date">
+            <sv:value>2019-08-06T13:29:46.758+02:00</sv:value>
+          </sv:property>
+          <sv:property sv:name="mgnl:createdBy" sv:type="String">
+            <sv:value>hazelrabbit</sv:value>
+          </sv:property>
+          <sv:property sv:name="mgnl:lastModified" sv:type="Date">
+            <sv:value>2019-08-06T13:29:46.758+02:00</sv:value>
+          </sv:property>
+          <sv:property sv:name="mgnl:lastModifiedBy" sv:type="String">
+            <sv:value>hazelrabbit</sv:value>
+          </sv:property>
+          <sv:property sv:name="tags" sv:type="String">
+            <sv:value>e68e4d5e-e5a9-4b37-ae2d-055bf1d1a1e9</sv:value>
+          </sv:property>
+        </sv:node>
+      </sv:node>
+    </sv:node>
+  </sv:node>
+</sv:node>
+
