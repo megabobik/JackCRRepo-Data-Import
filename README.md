@@ -5,7 +5,7 @@ Library for creating In-Memory JCR Repository (library which use Jackrabbit Repo
 Features:
 - Creates complete in-memory Jackrabbit JCR Repo (with help of nl.openweb.jcr.in-memory-jcr), which is fully functioning JCR report which can be used for testing queries, testing structure etc.
 
-[![Build Status](https://dev.azure.com/vagabundus/Project%20Kaninhop/_apis/build/status/Kaninhop%20Pipeline?branchName=master)](https://dev.azure.com/vagabundus/Project%20Kaninhop/_build/latest?definitionId=4&branchName=master)
+[![Build Status](https://dev.azure.com/vagabundus/Kaninhop/_apis/build/status/Kaninhop%20CI?branchName=master)](https://dev.azure.com/vagabundus/Kaninhop/_build/latest?definitionId=6&branchName=master)
 
 ### Remark:
 
